@@ -31,7 +31,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .mobile-nav.open { display: flex; }
 
 /* HERO */
-#hero { min-height: 100vh; padding: 80px 5% 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(160deg, #0f1623 0%, #1a2133 50%, #0f2030 100%); }
+#hero { min-height: 100vh; padding: 100px 5% 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(160deg, #0f1623 0%, #1a2133 50%, #0f2030 100%); }
 .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.06) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; }
 .hero-logo { width: min(85%, 600px); height: auto; display: block; margin: 0 auto 32px; position: relative; z-index: 2; }
 .veteran-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--teal); border-radius: 50px; padding: 6px 18px; font-size: 0.75rem; letter-spacing: 2px; color: var(--teal); text-transform: uppercase; margin-bottom: 24px; position: relative; z-index: 2; }
@@ -59,15 +59,15 @@ section { padding: clamp(60px, 10vw, 100px) 5%; }
 .card p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
 
 /* PRICING */
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: start; }
-.price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(45,212,191,0.12); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; position: relative; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: stretch; }
+.price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(45,212,191,0.12); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; position: relative; text-align: center; }
 .price-card.featured { border-color: var(--teal); background: rgba(45,212,191,0.05); }
 .featured-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--navy); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 16px; border-radius: 50px; white-space: nowrap; }
 .price-name { font-family: 'Rajdhani', sans-serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
 .price-amount { font-family: 'Rajdhani', sans-serif; font-size: 3rem; font-weight: 700; color: var(--teal); line-height: 1; margin-bottom: 6px; }
 .price-period { color: var(--gray); font-size: 0.85rem; margin-bottom: 28px; }
 .price-features { list-style: none; flex: 1; margin-bottom: 28px; }
-.price-features li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--gray); display: flex; align-items: center; gap: 10px; }
+.price-features li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--gray); display: flex; align-items: center; justify-content: center; gap: 10px; text-align: left; }
 .price-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
 
 /* PORTFOLIO */
@@ -151,9 +151,8 @@ footer { background: #0a0f1a; padding: 32px 5%; display: flex; justify-content: 
 <section id="hero">
   <div class="grid-bg"></div>
   <img src="ccs_logo_horizontal.jpg" alt="Carolina Canvas Studio Logo" class="hero-logo">
-  
   <h1>We Build Websites That Work <span>As Hard As You Do</span></h1>
-  <p>Locally Built. Proudly Serving Piedmont NC.</p>
+  <p>Veteran Owned · Locally Built · Proudly Serving Piedmont NC.</p>
   <a href="#portfolio" class="btn">See Our Work</a>
 </section>
 
@@ -315,7 +314,7 @@ footer { background: #0a0f1a; padding: 32px 5%; display: flex; justify-content: 
 <footer>
   <div class="footer-brand">Carolina Canvas Studio</div>
   <div class="footer-center">© 2025 Carolina Canvas Studio · james@carolinacanvasstudio.com</div>
-  <div class="footer-badge">⭐ Veteran Owned · Piedmont NC</div>
+  <div class="footer-badge">Piedmont NC</div>
 </footer>
 
 <script>
