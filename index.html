@@ -132,6 +132,21 @@
             max-width: 1200px;
         }
 
+        .hero-logo-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo {
+            width: min(85%, 520px);
+            height: auto;
+            display: block;
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+            mix-blend-mode: lighten;
+        }
+
         .veteran-badge {
             display: inline-flex;
             align-items: center;
@@ -682,6 +697,9 @@
             <div class="grid-pattern"></div>
         </div>
         <div class="hero-content">
+            <div class="hero-logo-wrap">
+                <img src="ccs_logo_horizontal.jpg" alt="Carolina Canvas Studio" class="hero-logo">
+            </div>
             <div class="veteran-badge">
                 <span class="star-icon">★</span>
                 <span>VETERAN OWNED</span>
