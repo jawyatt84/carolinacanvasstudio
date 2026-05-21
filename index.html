@@ -60,14 +60,14 @@ section { padding: clamp(60px, 10vw, 100px) 5%; }
 
 /* PRICING */
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: stretch; }
-.price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(45,212,191,0.12); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; position: relative; text-align: center; }
+.price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(45,212,191,0.12); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; position: relative; text-align: center; align-items: center; }
 .price-card.featured { border-color: var(--teal); background: rgba(45,212,191,0.05); }
 .featured-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--navy); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 16px; border-radius: 50px; white-space: nowrap; }
 .price-name { font-family: 'Rajdhani', sans-serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
 .price-amount { font-family: 'Rajdhani', sans-serif; font-size: 3rem; font-weight: 700; color: var(--teal); line-height: 1; margin-bottom: 6px; }
 .price-period { color: var(--gray); font-size: 0.85rem; margin-bottom: 28px; }
-.price-features { list-style: none; flex: 1; margin-bottom: 28px; }
-.price-features li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--gray); display: flex; align-items: center; justify-content: center; gap: 10px; text-align: left; }
+.price-features { list-style: none; flex: 1; margin-bottom: 28px; width: 100%; }
+.price-features li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--gray); display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; }
 .price-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
 
 /* PORTFOLIO */
@@ -198,27 +198,29 @@ footer { background: #0a0f1a; padding: 32px 5%; display: flex; justify-content: 
         <li>Contact Form</li>
         <li>Delivered in 1 Week</li>
         <li>Basic SEO</li>
+        <li>Lead Capture Form</li>
       </ul>
       <a href="#contact" class="btn btn-outline">Get Started</a>
     </div>
     <div class="price-card featured">
       <div class="featured-badge">Most Popular</div>
       <div class="price-name">Standard</div>
-      <div class="price-amount">$499</div>
-      <div class="price-period">+ $50/month</div>
+      <div class="price-amount">$50<span style="font-size:1.2rem">/mo</span></div>
+      <div class="price-period">+ $499 one-time setup fee</div>
       <ul class="price-features">
         <li>Everything in Starter</li>
         <li>Web Hosting Included</li>
         <li>Up to 2 Updates/Month</li>
         <li>Technical Support</li>
         <li>SSL Certificate</li>
+        <li>Performance Monitoring</li>
       </ul>
       <a href="#contact" class="btn">Get Started</a>
     </div>
     <div class="price-card">
       <div class="price-name">Premium</div>
-      <div class="price-amount">$499</div>
-      <div class="price-period">+ $100/month</div>
+      <div class="price-amount">$100<span style="font-size:1.2rem">/mo</span></div>
+      <div class="price-period">+ $499 one-time setup fee</div>
       <ul class="price-features">
         <li>Everything in Standard</li>
         <li>Google Business Profile</li>
