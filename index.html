@@ -118,7 +118,8 @@ footer { background: #0a0f1a; padding: 32px 5%; display: flex; justify-content: 
 }
 
 @media (max-width: 480px) {
-  .hero-logo { width: 85%; }
+  .hero-logo { mix-blend-mode: screen;
+filter: brightness(1.1) contrast(1.1); width: 85%; }
   .stats { grid-template-columns: 1fr; }
   nav { padding: 0 4%; }
 }
