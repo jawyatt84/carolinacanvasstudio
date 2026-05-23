@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | Carolina Canvas Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#0f1623;--navy2:#1a2133;--teal:#2dd4bf;--teal2:#14b8a4;--white:#f0f4f8;--gray:#8899aa;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,22,35,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(45,212,191,0.15);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.2rem;color:var(--teal);letter-spacing:2px;text-transform:uppercase;text-decoration:none;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--teal);}
+
+.hero{padding:120px 5% 60px;text-align:center;background:linear-gradient(160deg,#0d2a2a 0%,#1a3a3a 40%,#0f2030 100%);position:relative;overflow:hidden;}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;}
+.hero-label{font-size:0.75rem;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:16px;display:block;position:relative;z-index:2;}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin-bottom:16px;position:relative;z-index:2;}
+.hero p{color:var(--gray);font-size:1rem;max-width:520px;margin:0 auto 12px;position:relative;z-index:2;line-height:1.7;}
+.hero-note{font-size:0.8rem;color:var(--teal);position:relative;z-index:2;letter-spacing:1px;}
+
+.plans{padding:80px 5%;max-width:1100px;margin:0 auto;}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px;align-items:stretch;}
+
+.plan-card{background:rgba(255,255,255,0.03);border:1px solid rgba(45,212,191,0.12);border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;position:relative;transition:border-color 0.2s,transform 0.2s;}
+.plan-card:hover{border-color:rgba(45,212,191,0.3);transform:translateY(-4px);}
+.plan-card.featured{border-color:var(--teal);background:rgba(45,212,191,0.05);}
+.featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--navy);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 16px;border-radius:50px;white-space:nowrap;}
+
+.plan-name{font-family:'Rajdhani',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;color:var(--white);}
+.plan-price{font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;color:var(--teal);line-height:1;margin-bottom:4px;}
+.plan-price span{font-size:1.1rem;color:var(--gray);}
+.plan-period{color:var(--gray);font-size:0.85rem;margin-bottom:8px;}
+.plan-setup{font-size:0.8rem;color:var(--teal);margin-bottom:28px;letter-spacing:0.5px;}
+
+.plan-features{list-style:none;flex:1;margin-bottom:32px;}
+.plan-features li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.9rem;color:var(--gray);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.plan-features li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+.btn{display:block;width:100%;background:var(--teal);color:var(--navy);padding:14px 24px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:transform 0.2s,box-shadow 0.2s;text-align:center;border:none;cursor:pointer;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,212,191,0.35);}
+.btn-outline{background:transparent;color:var(--teal);border:2px solid var(--teal);}
+.btn-outline:hover{background:rgba(45,212,191,0.08);}
+.btn-disabled{background:rgba(45,212,191,0.15);color:rgba(45,212,191,0.4);cursor:not-allowed;pointer-events:none;}
+
+.guarantee{text-align:center;padding:48px 5%;border-top:1px solid rgba(45,212,191,0.1);}
+.guarantee h3{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:12px;}
+.guarantee p{color:var(--gray);font-size:0.95rem;max-width:480px;margin:0 auto 24px;line-height:1.7;}
+
+.faq{padding:60px 5% 80px;max-width:700px;margin:0 auto;}
+.faq h2{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;text-align:center;margin-bottom:40px;}
+.faq-item{border-bottom:1px solid rgba(45,212,191,0.1);padding:20px 0;}
+.faq-item h4{font-size:0.95rem;font-weight:600;margin-bottom:8px;color:var(--white);}
+.faq-item p{color:var(--gray);font-size:0.9rem;line-height:1.7;}
+
+footer{background:#0a0f1a;padding:24px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(45,212,191,0.1);}
+.footer-brand{font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--teal);letter-spacing:2px;font-size:1rem;}
+.footer-copy{color:var(--gray);font-size:0.8rem;}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Carolina Canvas Studio</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#how-it-works">How It Works</a></li>
+    <li><a href="/#portfolio">Portfolio</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="grid-bg"></div>
+  <span class="hero-label">Simple Pricing</span>
+  <h1>Choose Your Plan</h1>
+  <p>No hidden fees. No surprise charges. Your site is built, launched, and backed by a veteran-owned team.</p>
+  <span class="hero-note">★ Veteran Owned · Proudly Serving Piedmont NC</span>
+</div>
+
+<div class="plans">
+  <div class="plans-grid">
+
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$499</div>
+      <div class="plan-period">One-time payment</div>
+      <div class="plan-setup">&nbsp;</div>
+      <ul class="plan-features">
+        <li>1 Page Professional Website</li>
+        <li>Mobile Responsive Design</li>
+        <li>Contact Form</li>
+        <li>Basic SEO Setup</li>
+        <li>Lead Capture Form</li>
+        <li>Delivered in 1 Week</li>
+      </ul>
+      <a href="https://buy.stripe.com/6oU9AM7Eseol8Pg0Fm7IY00" class="btn btn-outline">Get Started</a>
+    </div>
+
+    <div class="plan-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="plan-name">Standard</div>
+      <div class="plan-price">$50<span>/mo</span></div>
+      <div class="plan-period">Monthly subscription</div>
+      <div class="plan-setup">+ $499 one-time setup fee</div>
+      <ul class="plan-features">
+        <li>Everything in Starter</li>
+        <li>Web Hosting Included</li>
+        <li>Up to 2 Updates/Month</li>
+        <li>Technical Support</li>
+        <li>SSL Certificate</li>
+        <li>Performance Monitoring</li>
+      </ul>
+      <a href="https://buy.stripe.com/8x28wI1g4eol3uW4VC7IY01" class="btn">Get Started</a>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-name">Premium</div>
+      <div class="plan-price">$100<span>/mo</span></div>
+      <div class="plan-period">Monthly subscription</div>
+      <div class="plan-setup">+ $499 one-time setup fee</div>
+      <ul class="plan-features">
+        <li>Everything in Standard</li>
+        <li>Google Business Profile</li>
+        <li>Monthly Content Updates</li>
+        <li>Advanced SEO</li>
+        <li>Analytics & Reporting</li>
+        <li>Priority Support</li>
+      </ul>
+      <a href="https://buy.stripe.com/cNi00c3oca85e9Aco47IY02" class="btn btn-outline">Get Started</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="guarantee">
+  <h3>100% Satisfaction Guaranteed</h3>
+  <p>If you're not happy with your site before it goes live, we'll make it right — no questions asked.</p>
+  <a href="/#contact" class="btn" style="display:inline-block;width:auto;padding:12px 32px;">Talk to Us First</a>
+</div>
+
+<div class="faq">
+  <h2>Common Questions</h2>
+  <div class="faq-item">
+    <h4>What do I get with the one-time Starter plan?</h4>
+    <p>A complete, professional single-page website built specifically for your business — mobile friendly, with a contact form and basic SEO. You own it outright.</p>
+  </div>
+  <div class="faq-item">
+    <h4>What's included in the monthly plans?</h4>
+    <p>Hosting, SSL, ongoing support, and regular updates so your site stays current. We handle the tech so you can focus on your business.</p>
+  </div>
+  <div class="faq-item">
+    <h4>How long does it take to build my site?</h4>
+    <p>Most sites are delivered within 48–72 hours. You'll get a preview link to review before anything goes live.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Can I upgrade my plan later?</h4>
+    <p>Absolutely. Start with Starter and upgrade to Standard or Premium any time — we'll credit your setup fee.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Do I need to provide anything?</h4>
+    <p>Just your business name, location, services, and any photos you want to use. We handle the rest.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">Carolina Canvas Studio</div>
+  <div class="footer-copy">© 2025 Carolina Canvas Studio · james@carolinacanvasstudio.com</div>
+  <div class="footer-copy">Veteran Owned · Piedmont NC</div>
+</footer>
+
+</body>
+</html>
